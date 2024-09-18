@@ -1,7 +1,5 @@
 window.addEventListener("load" , inicio);
-
 function inicio(){
-
 // Recuperamos el div padre en el que queramos crear las etiquetas img
     const primerdiv = document.querySelector(".gallery")
     const numImagenes = 20;
