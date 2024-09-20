@@ -3,6 +3,7 @@ window.addEventListener('load', inicio)
 function inicio(){
     //Identificamos el body
     const body = document.body
+    body.className=('container')
 
     //Creamos los elementos necesarios
     //El boton que realizara la accion y el div donde se guardaran las imagenes
@@ -24,6 +25,7 @@ function inicio(){
         } else{
             //Limpiar el contenido cada vez que se hace click
             //En esta condicion siempre habra un primer hijo
+            limpiarContenido()
             while(div.firstChild){
                 div.removeChild(div.firstChild)
             }
@@ -31,6 +33,7 @@ function inicio(){
             for (let i = 0; i < numImagenes; i++) {
                 //Nos creamos el elemento img para cada iteracion
                 const imagen = document.createElement('img')
+                imagen.className= 'gallery img'
                 //Queda pendiente el classname de imagen.ClassName = 'gallery img'
                 let numAleatorio = Math.floor(Math.random()*51)
                 let genero = ''
@@ -41,10 +44,16 @@ function inicio(){
                     genero = 'men'
                 }
 
-                //Seteamos el atributo src 
+                //Seteamos el atributo src de la imagen 
                 imagen.setAttribute("src","https://randomuser.me/api/portraits/" + genero+"/"+ numAleatorio +".jpg");
                 div.appendChild(imagen)
                 
+            }
+        }
+
+        function limpiarContenido(){
+            while(div.firstChild){
+                div.removeChild(div.firstChild)
             }
         }
     })
