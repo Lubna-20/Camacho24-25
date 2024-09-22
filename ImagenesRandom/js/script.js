@@ -17,7 +17,7 @@ function inicio(){
     function cargarImagen(){
         for(let i=0;i<20;i++){
             const imagen=document.createElement("img");
-            let nR=Math.floor(Math.random()*40);
+            let nR=Math.floor(Math.random()*10);
             let genero="women"
             if(i%2==0){
                 genero="women";
