@@ -48,8 +48,8 @@ function inicio(){
         contenedor.id=color
         contenedor.style.width='150px'
         contenedor.style.height='150px'
-        contenedor.style.marginTop='8px'ç
-        contenedor.style.textAlign=center
+        contenedor.style.marginTop='8px'
+        contenedor.style.textAlign='center'
 
         
         contenedor.textContent=nombre
