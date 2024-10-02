@@ -4,7 +4,7 @@ accion.onsubmit = ()=>{
   //primer cusdro de texto: entre 3 y 5 digitos 
   let exped=document.querySelector("#idExpediente")
   let contExpe=exped.value
-  let smExp=document.getElementById("smExpediente")
+  let smExp=document.getElementById("smExpediente") 
   alert(contExpe.textContent=contExpe.length)
   if (contExp.length<3 || contExpe.length>5) {
     avanzar=false
