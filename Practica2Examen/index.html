@@ -6,56 +6,95 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-      <div class="container">
+      
+    <div class="container-fluid">
         <div class="row">
-            <form action="" id="validar">
-                <div class="col-lg5">
-                    <h3>¿Qué ciclo estas cursando?</h3>
-                    <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="radio" id="idRadio1" value="DAM" checked> DAM
-                            </label><br>
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="radio" id="idRadio2" value="ASIR" > ASIR
-                            </label><br>
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="radio" id="idRadio3" value="checkedValue" >  SMR
-                            </label><br>
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="radio" id="idRadio4" value="checkedValue" > DAW
-                            </label><br>
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="radio" id="idRadio5" value="checkedValue" >   FPB
-                            </label>
+            <div class="col-4">
+                <h4>¿Qué ciclo estás cursando?</h2>
+                <input type="radio" name="curso" value="DAM" id="DAM" checked = "checked">
+                <label for="DAM">DAM</label>
+                <br>
+                <input type="radio" name="curso" value="SIR" id="ASIR">
+                <label for="ASIR">ASIR</label>
+<br>
+                <input type="radio" name="curso" value="SMR" id="SMR">
+                <label for="SMR">SMR</label>
+<br>
+                <input type="radio" name="curso" value="DAW" id="DAW">
+                <label for="DAW">DAW</label>
+<br>
+                <input type="radio" name="curso" value="FFB" id="FFB">
+                <label for="FFB">FFB</label>
+            </div>
+
+            <div class="col-4">
+                <h4>Módulos</h2>
+                <input type="checkbox" name="ch1" id="ch1" value="Diseño web">
+                <label for="ch1">Diseño interfaces web</label><br>
+
+                <input type="checkbox" name="ch2" id="ch2" value="Desarrollo entorno cliente">
+                <label for="ch2">Desarrollo entorno cliente</label><br>
+
+                <input type="checkbox" name="ch3" id="ch3" value="Desarrollo entorno servidor">
+                <label for="ch3">Desarrollo entorno servidor</label><br>
+
+                <input type="checkbox" name="ch4" id="ch4" value="Desarrollo interfaces multiplataforma">
+                <label for="ch4">Desarrollo interfaces multiplataforma</label><br>
+            </div>
+
+            <div class="col-4">
+                <h4>Curso:</h2><br>
+
+                    <div class="form-group">
+                      <label for="cursos"></label>
+                      <select class="form-control" name="cursos" id="cursos">
+                        <option>1º</option>
+                        <option>2º</option>
+                        <option>3º</option>
+                      </select>
                     </div>
-                </div>
-                <div class="col-lg4">
-                    <h3>Módulos: </h3>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" name="checkbok" id="idCheckbox1" value="checkedValue" checked>Diseño Interfaces Web
-                      </label><br>
-                      <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" name="checkbok" id="idCheckbox1" value="checkedValue" >Desarrollo Entorno Cliente
-                      </label><br>
-                      <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" name="checkbok" id="idCheckbox1" value="checkedValue" >Desarrollo Entorno Servidor
-                      </label><br>
-                      <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" name="checkbok" id="idCheckbox1" value="checkedValue" >Diseño Interfaces Multiplataforma
-                      </label>
-                    </div>
-                </div>
+
+               
+                   
+                    <br>
+                    <br>
+                    <h4>Nombre:</h2><br>
+                        <input type="text" id="nombre" placeholder="nombre..." name="nombre">
+            </div>
                 
-            </form>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                   <br>
+                    <div class="form-group">
+                      <label for="horas">Horas asistidas</label>
+                      <select multiple class="form-control" name="horas" id="horas">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+
+                      <div class="form-group">
+                        <label for="comentario">Comentario</label>
+                        <textarea  class="form-control" name="comentario" id="comentario" rows="3"></textarea>
+                      </div>
+
+                    </div>
+
+                </div>
+                <button id="mostrarResultados" class="btn btn-primary">Mostrar Resultados</button>
+              </div>
+            </div>
         </div>
-      </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

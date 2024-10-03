@@ -1,58 +1,70 @@
+// Escuchamos el evento 'load' para asegurarnos de que el DOM está completamente cargado antes de ejecutar el script
 window.addEventListener('load', inicio)
 
-function inicio(){
-    //Identificamos el body
+function inicio() {
+    // Identificamos el body y le asignamos una clase para aplicarle estilos si es necesario
     const body = document.body
-    body.className=('container')
+    body.className = 'container'
 
-    //Creamos los elementos necesarios
-    //El boton que realizara la accion y el div donde se guardaran las imagenes
+    // Creamos los elementos necesarios:
+    // Un botón para que el usuario pueda cargar las imágenes
     const boton = document.createElement('button')
+    // Un div que contendrá las imágenes cargadas
     const div = document.createElement('div')
 
-    //Poner texto al boton 
-    boton.textContent= 'Cargar Imagenes'
+    // Le ponemos texto al botón para indicar su función
+    boton.textContent = 'Cargar Imágenes'
 
-    //Anadir el boton y el div al body
+    // Añadimos el botón y el contenedor de imágenes (div) al body
     body.appendChild(boton)
     body.appendChild(div)
 
-    boton.addEventListener('click',() =>{
-        let numImagenes = parseInt(prompt('Introduce el numero de imagenes'))
+    // Agregamos un evento 'click' al botón para ejecutar el proceso de carga de imágenes cuando sea presionado
+    boton.addEventListener('click', () => {
+        // Solicitamos al usuario que ingrese el número de imágenes a cargar
+        let numImagenes = parseInt(prompt('Introduce el número de imágenes'))
 
-        if(numImagenes < 5 || numImagenes > 50){
-            alert('El numero de imagenes no puede ser menor que 5 ni superior de 50')
-        } else{
-            //Limpiar el contenido cada vez que se hace click
-            //En esta condicion siempre habra un primer hijo
+        // Validamos que el número de imágenes sea mayor o igual a 5 y menor o igual a 50
+        if (numImagenes < 5 || numImagenes > 50) {
+            alert('El número de imágenes no puede ser menor que 5 ni superior a 50')
+        } else {
+            // Limpiamos el contenido previo antes de agregar nuevas imágenes
             limpiarContenido()
-            while(div.firstChild){
+
+            // Eliminamos cualquier imagen previamente cargada dentro del div
+            while (div.firstChild) {
                 div.removeChild(div.firstChild)
             }
 
+            // Creamos y añadimos las imágenes según el número que indicó el usuario
             for (let i = 0; i < numImagenes; i++) {
-                //Nos creamos el elemento img para cada iteracion
+                // Creamos un nuevo elemento de imagen (img) para cada iteración
                 const imagen = document.createElement('img')
-                imagen.className= 'gallery img'
-                //Queda pendiente el classname de imagen.ClassName = 'gallery img'
-                let numAleatorio = Math.floor(Math.random()*51)
+                // Le asignamos una clase a cada imagen para poder aplicarles estilos si es necesario
+                imagen.className = 'gallery img'
+
+                // Generamos un número aleatorio entre 0 y 50 para usar en la URL de la imagen
+                let numAleatorio = Math.floor(Math.random() * 51)
+                
+                // Definimos el género de la persona en la imagen. Alternamos entre 'men' y 'women' dependiendo de si el índice es par o impar.
                 let genero = ''
-                //Averiguando si i es par o impar
                 if (i % 2 == 0) {
-                    genero = 'women'
-                } else{
-                    genero = 'men'
+                    genero = 'women' // Imágenes de mujeres para índices pares
+                } else {
+                    genero = 'men' // Imágenes de hombres para índices impares
                 }
 
-                //Seteamos el atributo src de la imagen 
-                imagen.setAttribute("src","https://randomuser.me/api/portraits/" + genero+"/"+ numAleatorio +".jpg");
+                // Seteamos el atributo 'src' de la imagen, indicando la URL desde donde se cargarán las imágenes de randomuser.me
+                imagen.setAttribute("src", "https://randomuser.me/api/portraits/" + genero + "/" + numAleatorio + ".jpg")
+
+                // Añadimos la imagen generada al div
                 div.appendChild(imagen)
-                
             }
         }
 
-        function limpiarContenido(){
-            while(div.firstChild){
+        // Función para limpiar el contenido previo del div
+        function limpiarContenido() {
+            while (div.firstChild) {
                 div.removeChild(div.firstChild)
             }
         }
