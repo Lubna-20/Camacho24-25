@@ -31,9 +31,12 @@ accion.onsubmit = function(){
       }
        
     }
-    let smD = document.getElementById("smDuplicados")
-    if (estaR==) {
-        
+    let smD = document.getElementById("smDuplicado");
+    if (estaR === true) {
+    smD.textContent = "* Hay números duplicados";
+    avanzar = false;
+    } else {
+    smD.textContent = ""; // Limpiar mensaje si no hay duplicados
     }
     //llamar a la funcion
     validar(n1,sm1)

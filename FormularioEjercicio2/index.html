@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario Walddy</title>
+    <!-- Bootstrap 4 CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">Formulario Walddy</h2>
+      <form
+        action="http://moralo.atwebpages.com/loterias/insertar2.php"
+        method="get"
+        id="validar"
+      >
+        <div class="form-group">
+          <label for="texto1">Texto 1</label>
+          <input
+            type="text"
+            class="form-control"
+            id="texto1"
+            placeholder="Ingresa Texto 1"
+            aria-describedby="texto1Help"
+          />
+          <small id="texto1Help" class="form-text text-muted"
+            >Este es el primer campo de texto.</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="texto2">Texto 2</label>
+          <input
+            type="text"
+            class="form-control"
+            id="texto2"
+            placeholder="Ingresa Texto 2"
+            aria-describedby="texto2Help"
+          />
+          <small id="texto2Help" class="form-text text-muted"
+            >Este es el segundo campo de texto.</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="numero1">Número 1</label>
+          <input
+            type="text"
+            class="form-control"
+            id="numero1"
+            placeholder="Ingresa Número 1"
+            aria-describedby="numero1Help"
+          />
+          <small id="numero1Help" class="form-text text-muted"
+            >Ingresa un número para el primer campo numérico.</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="numero2">Número 2</label>
+          <input
+            type="text"
+            class="form-control"
+            id="numero2"
+            placeholder="Ingresa Número 2"
+            aria-describedby="numero2Help"
+          />
+          <small id="numero2Help" class="form-text text-muted"
+            >Ingresa un número para el segundo campo numérico.</small
+          >
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+
+    <!-- Bootstrap 4 JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
