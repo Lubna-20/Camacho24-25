@@ -12,25 +12,39 @@ const imagenes=["imagenes/chirimoya.PNG","imagenes/ciruela.PNG", "imagenes/fresa
 "imagenes/platanos.PNG", "imagenes/pomelos.PNG", "imagenes/prunus.PNG", "imagenes/sandias.PNG"];
 
 function inicio(){
-    const conenedorPadre = document.body
-    const div1 = document.querySelector('.gallery')
-    div1.className='container'
-    var nr
-    nr =cargarImagenMuestra()
-    function cargarImagenMuestra(){
-        //crear contenido de imagen de  referencia
-        const imagen=document.createElement("img");
-        imagen.className="gallery"
-        for (let i = 0; i < imagenes.length; i++) {
-            let imagen = document.createElement("img");
-            imagen.setAttribute("src",imagenes)
-            div1.appendChild(imagen) 
-        }
-    
+    //identificamos la galeria de imagenes, nombre, precio
+    const galeria = document.querySelector('#galeria')
+    //Identificamos la tabla.carrito
+    const carrito = document.querySelector('#cesta')
+    const precio = document.querySelector('#total')
 
-        //ubicar la imagen a la caja
-        div1.appendChild(imagen);
- 
+    //Rellamos la galeria
+    for (let i = 0; i < imagenes.length; i++) {
+
+        const contenedorProducto = document.createElement('div')
+        contenedorProducto.style.backgroundColor = 'grey'
+        //Dentro de contenedorProducto creamos las imagenes , nombres y precios
+        galeria.appendChild(contenedorProducto)
+        let imgfRuta = document.createElement('img')
+        imgfRuta.setAttribute("src",imagenes[i]);
+        div.appendChild(imgfRuta)
+        //Creamos un parrafp para introducir nombre y precio
+        const pFruta = document.createElement('p')
+        pFruta.textContent=nombres[i]
+        contenedorProducto.appendChild(pFruta)
+        //precio
+        const pPrecioFruta = document.createElement('p')
+        pPrecioFruta.textContent="Precio" + precios[i]
+        contenedorProducto.appendChild(pPrecioFruta)
+
+        //le ponemos un evento a las imagenes 
+        //imgfRuta.addEventListener('click' , comprar)
+        imgfRuta.onclick=comprar;
+         
     }
+}
+function comprar(imagenFruta){
+
+    alert(imagenFruta.target)
 }
  
