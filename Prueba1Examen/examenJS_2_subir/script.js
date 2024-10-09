@@ -28,6 +28,8 @@ encabezado.appendChild(precioParcialTh)
 let botonEliminar = document.createElement('th')
 botonEliminar.textContent="Eliminar"
 encabezado.appendChild(botonEliminar)
+//Precio final
+let precioTotal=0
 
 function inicio(){
    
@@ -41,6 +43,7 @@ function inicio(){
         let imgfRuta = document.createElement('img')
         imgfRuta.setAttribute("src",imagenes[i]);
         imgfRuta.setAttribute("alt",nombres[i])
+        imgfRuta.value=precios[i]
         contenedorProducto.appendChild(imgfRuta)
         //Creamos un parrafp para introducir nombre y precio
         const pFruta = document.createElement('p')
@@ -48,8 +51,11 @@ function inicio(){
         contenedorProducto.appendChild(pFruta)
         //precio
         const pPrecioFruta = document.createElement('p')
-        pPrecioFruta.textContent="Precio" + precios[i]
+        pPrecioFruta.textContent=precios[i]
         contenedorProducto.appendChild(pPrecioFruta)
+        //Precio parcial
+        const precioParcial = document.createElement("p")
+
 
         //le ponemos un evento a las imagenes 
         //imgfRuta.addEventListener('click' , comprar)
@@ -66,8 +72,40 @@ function comprar(objetoimg){
     //hay que crear tantos td como columnas tengo la tabla
     //nombre, peso , precio unitario , precio parcial , boton eleminar 
     const celdaNombre=document.createElement("td")
-    celdaNombre.textContent=objetoimg.targer.alt
-    celdaNombre.appendChild(celdaNombre)
-    
+    celdaNombre.textContent=objetoimg.target.alt
+    fila.appendChild(celdaNombre)
+
+    //añadir peso
+    const celdaPeso = document.createElement("td")
+    celdaPeso.textContent=peso
+    fila.appendChild(celdaPeso)
+
+    //precio unitario
+    const celdaPrecio = document.createElement("td")
+    celdaPrecio.textContent=objetoimg.target.value+ "€"
+    fila.appendChild(celdaPrecio)
+
+    //precio Parcial
+    const celdaPrecioParcial = document.createElement("td")
+    celdaPrecioParcial.textContent=parseInt(peso)*parseInt(objetoimg.target.value)+ "€"
+    fila.appendChild(celdaPrecioParcial)
+
+    //boton eliminar
+    const celdaEliminar = document.createElement("td")
+    const btnEliminar = document.createElement("button")
+    btnEliminar.textContent="Quitar cesta" + celdaNombre.textContent
+    //crear el evento de eliminar 
+    btnEliminar.onclick=eliminarProductoCesta
+    celdaEliminar.appendChild(btnEliminar)
+    fila.appendChild(celdaEliminar)
+//acumular el precio parcial al totall
+precioTotal+=parseInt(peso)*parseInt(objetoimg.target.value)
+precio.textContent=""
+precio.textContent="Totales= " +precioTotal+ "€" 
+}
+
+
+function eliminarProductoCesta(objetoEliminar){
+    alert(objetoEliminar.target)
 }
  
