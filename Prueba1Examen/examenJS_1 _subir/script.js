@@ -8,10 +8,10 @@ accion.onsubmit = ()=>{
     let validacion3 = document.getElementById('v3').value
     let validacion4 = document.getElementById('v4').value
  
-    let smvalidacion1 = document.getElementById('sm1')
-    let smvalidacion2 = document.getElementById('sm2')
-    let smvalidacion3 = document.getElementById('sm3')
-    let smvalidacion4 = document.getElementById('sm4')
+    let smvalidacion1 = document.getElementById('smv1')
+    let smvalidacion2 = document.getElementById('smv2')
+    let smvalidacion3 = document.getElementById('smv3')
+    let smvalidacion4 = document.getElementById('smv4')
 
     //Creamos las funciones de cada validacion
     validacion1campo(validacion1,smvalidacion1)

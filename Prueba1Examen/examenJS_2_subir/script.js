@@ -11,101 +11,100 @@ const imagenes=["imagenes/chirimoya.PNG","imagenes/ciruela.PNG", "imagenes/fresa
 "imagenes/nectarina.PNG", "imagenes/papaya.PNG", "imagenes/peras.PNG", "imagenes/piña.PNG", 
 "imagenes/platanos.PNG", "imagenes/pomelos.PNG", "imagenes/prunus.PNG", "imagenes/sandias.PNG"];
 
-//identificamos la galeria de imagenes, nombre, precio
-const galeria = document.querySelector('#galeria')
-//Identificamos la tabla.carrito
-const carrito = document.querySelector('#cesta')
-//identificar el primer tr  (se cooresponde con la cabecera)
-let encabezado = document.querySelector("tr")
-//Identificar el rotulo del precio total
-const precio = document.querySelector('#total')
-//nuevo th para el precio total
-let precioParcialTh = document.createElement('th')
-precioParcialTh.textContent="Precio Total";
-//Añadir el nuevo th al encabezado de la tabla 
-encabezado.appendChild(precioParcialTh)
-//añadir el encabezado del boton de eliminar una fruta
-let botonEliminar = document.createElement('th')
-botonEliminar.textContent="Eliminar"
-encabezado.appendChild(botonEliminar)
-//Precio final
-let precioTotal=0
+//Identificamos la galeria de imagens,nombre,precio
+const galeria = document.querySelector('#galeria');
+//Identificar la tabla,carrito
+const carrito = document.querySelector('#cesta');
+//identificar el primer tr (se corresponde con la cabecera)
+let encabezado=carrito.querySelector("tr");
+//identificar el rótulo del precio total
+const precio = document.querySelector('#total');
+//nuevo th para el precio parcial 
+let precioParcialTh=document.createElement("th");
+precioParcialTh.textContent="Precio_total";
+//añadir el nuevo th al encabezado de la tabla
+encabezado.appendChild(precioParcialTh);
+//añadir el encabezado del botón de eliminar una fruta
+let botonEliminar=document.createElement("th");
+botonEliminar.textContent="Eliminar";
+encabezado.appendChild(botonEliminar);
+//precio total
+let precioTotal=0;
 
+//Rellenamos la galeria
 function inicio(){
+
    
-    //Rellamos la galeria
-    for (let i = 0; i < imagenes.length; i++) {
-        //contenedor de fondo gris : imagenes, precio y nombres 
-        const contenedorProducto = document.createElement('div')
-        contenedorProducto.style.backgroundColor = 'grey'
-        //Dentro de contenedorProducto creamos las imagenes , nombres y precios
-        galeria.appendChild(contenedorProducto)
-        let imgfRuta = document.createElement('img')
-        imgfRuta.setAttribute("src",imagenes[i]);
-        imgfRuta.setAttribute("alt",nombres[i])
-        imgfRuta.value=precios[i]
-        contenedorProducto.appendChild(imgfRuta)
-        //Creamos un parrafp para introducir nombre y precio
-        const pFruta = document.createElement('p')
-        pFruta.textContent=nombres[i]
-        contenedorProducto.appendChild(pFruta)
+
+    for(let i=0;i<imagenes.length;i++){
+       //contenedor de fondo gris : imágenes, precio y nombrs
+        const contenedorProducto  = document.createElement('div');
+        contenedorProducto.style.backgroundColor = "grey";
+        //Dentro de contenedorProducto creamos las imagenes,precio y nombres
+        galeria.appendChild(contenedorProducto);
+        let imgFruta = document.createElement('img');
+        imgFruta.setAttribute("src",imagenes[i]);
+        imgFruta.setAttribute("alt",nombres[i]);
+        //imgFruta.setAttribute("value",precios[i]);
+        imgFruta.value=precios[i];
+        contenedorProducto.appendChild(imgFruta);
+        //Creamos un parrafo para introducir nombre y precio
+        const pFruta= document.createElement('p');
+        pFruta.textContent=nombres[i];
+        contenedorProducto.appendChild(pFruta);
         //precio
-        const pPrecioFruta = document.createElement('p')
-        pPrecioFruta.textContent=precios[i]
-        contenedorProducto.appendChild(pPrecioFruta)
-        //Precio parcial
-        const precioParcial = document.createElement("p")
+        const pPrecioFruta = document.createElement('p');
+        pPrecioFruta.textContent = precios[i];
+        contenedorProducto.appendChild(pPrecioFruta);
+         //precio Parcial
+         const precioParcial=document.createElement('p')
+        //Le ponemos un evento a las imagenes
+        //imgFruta.addEventListener('click',comprar);
+        imgFruta.onclick = comprar;
 
-
-        //le ponemos un evento a las imagenes 
-        //imgfRuta.addEventListener('click' , comprar)
-        imgfRuta.onclick=comprar;
-         
     }
+
 }
+
 function comprar(objetoimg){
-    //Mensaje emergrnte par aañadir peso 
-    let peso = prompt("Teclea el peso de " +objetoimg+target+alt)
-    //Crear una nueva fila fila (tr) de la tabla con el nuevo producto (añadir a carrito)
-    const fila= document.createElement("tr")
-    carrito.appendChild(fila)
-    //hay que crear tantos td como columnas tengo la tabla
-    //nombre, peso , precio unitario , precio parcial , boton eleminar 
-    const celdaNombre=document.createElement("td")
-    celdaNombre.textContent=objetoimg.target.alt
-    fila.appendChild(celdaNombre)
-
-    //añadir peso
-    const celdaPeso = document.createElement("td")
-    celdaPeso.textContent=peso
-    fila.appendChild(celdaPeso)
-
-    //precio unitario
-    const celdaPrecio = document.createElement("td")
-    celdaPrecio.textContent=objetoimg.target.value+ "€"
-    fila.appendChild(celdaPrecio)
-
-    //precio Parcial
-    const celdaPrecioParcial = document.createElement("td")
-    celdaPrecioParcial.textContent=parseInt(peso)*parseInt(objetoimg.target.value)+ "€"
-    fila.appendChild(celdaPrecioParcial)
-
-    //boton eliminar
-    const celdaEliminar = document.createElement("td")
-    const btnEliminar = document.createElement("button")
-    btnEliminar.textContent="Quitar cesta" + celdaNombre.textContent
-    //crear el evento de eliminar 
-    btnEliminar.onclick=eliminarProductoCesta
-    celdaEliminar.appendChild(btnEliminar)
-    fila.appendChild(celdaEliminar)
-//acumular el precio parcial al totall
-precioTotal+=parseInt(peso)*parseInt(objetoimg.target.value)
-precio.textContent=""
-precio.textContent="Totales= " +precioTotal+ "€" 
+    //mensaje emergente para añadir peso
+let peso=prompt("teclea el peso de "+objetoimg.target.alt)
+//crear una nueva fila (tr) de la tabla con el nuevo producto (añadir a carrito)
+const fila=document.createElement("tr");
+carrito.appendChild(fila);
+//hay que crear tantos td como columnas tenga la tabla
+//nombre, peso, precio_unitario, precio_parcial, botonEliminar
+const celdaNombre=document.createElement("td");
+celdaNombre.textContent=objetoimg.target.alt;
+fila.appendChild(celdaNombre);
+//añadir peso
+const celdaPeso=document.createElement("td");
+celdaPeso.textContent=peso;
+fila.appendChild(celdaPeso);
+//precio unitario
+const celdaPrecio=document.createElement("td");
+celdaPrecio.textContent=objetoimg.target.value + " €";
+fila.appendChild(celdaPrecio);
+//precio parcial
+const celdaPrecioParcial=document.createElement("td");
+celdaPrecioParcial.textContent=parseInt(peso)*parseInt(objetoimg.target.value) + " €";
+fila.appendChild(celdaPrecioParcial);
+//botón Eliminar
+const celdaEliminar=document.createElement("td");
+const btnEliminar=document.createElement("button");
+btnEliminar.textContent="Quitar cesta "+celdaNombre.textContent;
+//crear el evento de eliminar
+btnEliminar.onclick=eliminarProductoCesta;
+celdaEliminar.appendChild(btnEliminar);
+fila.appendChild(celdaEliminar);
+//acumular el precio parcial al total
+precioTotal+=parseInt(peso)*parseInt(objetoimg.target.value) ;
+precio.textContent="";
+precio.textContent="Total= "+precioTotal+ " €"
 }
+
 
 
 function eliminarProductoCesta(objetoEliminar){
-    alert(objetoEliminar.target)
+   alert(objetoEliminar.target);
 }
- 
