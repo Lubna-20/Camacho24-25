@@ -15,23 +15,33 @@ const imagenes=["imagenes/chirimoya.PNG","imagenes/ciruela.PNG", "imagenes/fresa
 const galeria = document.querySelector('#galeria')
 //Identificamos la tabla.carrito
 const carrito = document.querySelector('#cesta')
+//identificar el primer tr  (se cooresponde con la cabecera)
+let encabezado = document.querySelector("tr")
 //Identificar el rotulo del precio total
 const precio = document.querySelector('#total')
 //nuevo th para el precio total
-
+let precioParcialTh = document.createElement('th')
+precioParcialTh.textContent="Precio Total";
+//Añadir el nuevo th al encabezado de la tabla 
+encabezado.appendChild(precioParcialTh)
+//añadir el encabezado del boton de eliminar una fruta
+let botonEliminar = document.createElement('th')
+botonEliminar.textContent="Eliminar"
+encabezado.appendChild(botonEliminar)
 
 function inicio(){
    
     //Rellamos la galeria
     for (let i = 0; i < imagenes.length; i++) {
-
+        //contenedor de fondo gris : imagenes, precio y nombres 
         const contenedorProducto = document.createElement('div')
         contenedorProducto.style.backgroundColor = 'grey'
         //Dentro de contenedorProducto creamos las imagenes , nombres y precios
         galeria.appendChild(contenedorProducto)
         let imgfRuta = document.createElement('img')
         imgfRuta.setAttribute("src",imagenes[i]);
-        div.appendChild(imgfRuta)
+        imgfRuta.setAttribute("alt",nombres[i])
+        contenedorProducto.appendChild(imgfRuta)
         //Creamos un parrafp para introducir nombre y precio
         const pFruta = document.createElement('p')
         pFruta.textContent=nombres[i]
@@ -47,8 +57,17 @@ function inicio(){
          
     }
 }
-function comprar(imagenFruta){
-
-    alert(imagenFruta.target) 
+function comprar(objetoimg){
+    //Mensaje emergrnte par aañadir peso 
+    let peso = prompt("Teclea el peso de " +objetoimg+target+alt)
+    //Crear una nueva fila fila (tr) de la tabla con el nuevo producto (añadir a carrito)
+    const fila= document.createElement("tr")
+    carrito.appendChild(fila)
+    //hay que crear tantos td como columnas tengo la tabla
+    //nombre, peso , precio unitario , precio parcial , boton eleminar 
+    const celdaNombre=document.createElement("td")
+    celdaNombre.textContent=objetoimg.targer.alt
+    celdaNombre.appendChild(celdaNombre)
+    
 }
  
