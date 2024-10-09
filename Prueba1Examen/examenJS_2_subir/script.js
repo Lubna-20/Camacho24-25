@@ -11,13 +11,17 @@ const imagenes=["imagenes/chirimoya.PNG","imagenes/ciruela.PNG", "imagenes/fresa
 "imagenes/nectarina.PNG", "imagenes/papaya.PNG", "imagenes/peras.PNG", "imagenes/piña.PNG", 
 "imagenes/platanos.PNG", "imagenes/pomelos.PNG", "imagenes/prunus.PNG", "imagenes/sandias.PNG"];
 
-function inicio(){
-    //identificamos la galeria de imagenes, nombre, precio
-    const galeria = document.querySelector('#galeria')
-    //Identificamos la tabla.carrito
-    const carrito = document.querySelector('#cesta')
-    const precio = document.querySelector('#total')
+//identificamos la galeria de imagenes, nombre, precio
+const galeria = document.querySelector('#galeria')
+//Identificamos la tabla.carrito
+const carrito = document.querySelector('#cesta')
+//Identificar el rotulo del precio total
+const precio = document.querySelector('#total')
+//nuevo th para el precio total
 
+
+function inicio(){
+   
     //Rellamos la galeria
     for (let i = 0; i < imagenes.length; i++) {
 
@@ -45,6 +49,6 @@ function inicio(){
 }
 function comprar(imagenFruta){
 
-    alert(imagenFruta.target)
+    alert(imagenFruta.target) 
 }
  
