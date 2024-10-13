@@ -34,8 +34,6 @@ let precioTotal=0;
 //Rellenamos la galeria
 function inicio(){
 
-   
-
     for(let i=0;i<imagenes.length;i++){
        //contenedor de fondo gris : imágenes, precio y nombrs
         const contenedorProducto  = document.createElement('div');
@@ -47,6 +45,7 @@ function inicio(){
         imgFruta.setAttribute("alt",nombres[i]);
         //imgFruta.setAttribute("value",precios[i]);
         imgFruta.value=precios[i];
+        imgFruta.value=[nombres[i], precios[i], nombre[i]]
         contenedorProducto.appendChild(imgFruta);
         //Creamos un parrafo para introducir nombre y precio
         const pFruta= document.createElement('p');
