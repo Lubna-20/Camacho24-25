@@ -1,5 +1,5 @@
 //url del fichero json
-const url = "/getWebcam.php"
+const url = "getWebcam.php"
 //contenedor donde se muestran los datos
 const  ubicacion = document.querySelector("#fila")
 
