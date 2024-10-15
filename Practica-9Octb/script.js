@@ -19,5 +19,20 @@ function inicio(){
 
     //4º Todos los hijos van en amarillo, 
     //aunque más abajo alguno se modificarán
+    //5º Selecciono pepino listaHijosV[2], le cambio el color a
+    // él, al hermano de por arriba y de por abajo.
+    let hijosVerano = veranoPadre.children;
+    for (let i = 0; i < hijosVerano.length; i++) {
+        hijosVerano[i].style.backgroundColor = 'yellow';
+        hijosVerano[1].style.backgroundColor = '#FF00FF'; 
+        hijosVerano[2].style.backgroundColor = '#0000FF';
+        hijosVerano[3].style.backgroundColor = 'purple';
 
-}
+    }
+   //6º Padre3 igual que 1º, pero con id primavera.
+   // Hermano anterior va en '#ff2299'
+
+   let primaveraPadre = document.getElementById('primavera')
+   primaveraPadre.previousElementSibling.style.backgroundColor='#ff2299'
+
+    }
