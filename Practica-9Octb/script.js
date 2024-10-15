@@ -19,5 +19,9 @@ function inicio(){
 
     //4º Todos los hijos van en amarillo, 
     //aunque más abajo alguno se modificarán
+    let hijosVerano = veranoPadre.children;
+        for (let i = 0; i < hijosVerano.length; i++) {
+            hijosVerano[i].style.backgroundColor = "yellow";
+        }
 
 }
