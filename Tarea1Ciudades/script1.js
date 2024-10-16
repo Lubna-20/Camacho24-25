@@ -3,7 +3,7 @@ window.addEventListener("load", inicio);
 //const url = "http://camacho.atwebpages.com/carouselCiudades2/getCiudades.php"
 const url = "getCiudades.json";
 //Se identifica el contenedor del html donde van los datos
-
+const tabla=document.querySelector(".table")  //faltabaaaaaaaaaaaaaaa
 function inicio() {
   fetch(url)
   .then((respuesta) => respuesta.json())
@@ -16,7 +16,6 @@ function cargar(datos) {
   datos.forEach(recorrer);
 }
 function recorrer(item, index) {
-  alert(item.ciudad_nombre);
   let fila = document.createElement("tr");
 
   let idCiudad = document.createElement("td");
@@ -42,4 +41,6 @@ function recorrer(item, index) {
   let mapaCiudades = document.createElement("td");
   mapaCiudades.innerHTML = item.mapa;
   fila.appendChild(mapaCiudades);
+  tabla.appendChild(fila) //faltabaaaaaaaaaaaaaaaaaa
+  
 }
