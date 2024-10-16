@@ -1,15 +1,15 @@
 window.addEventListener("load", inicio);
 
 //const url = "http://camacho.atwebpages.com/carouselCiudades2/getCiudades.php"
-const url = "getCiudades.php.json";
+const url = "getCiudades.json";
 //Se identifica el contenedor del html donde van los datos
 
 function inicio() {
   fetch(url)
-    .then((respuesta) => respuesta.json())
-    .then((datos) => cargar(datos))
-    .finally(() => alert("FIN."))
-    .catch((error) => alert(error));
+  .then((respuesta) => respuesta.json())
+  .then((datos) => cargar(datos))
+  .catch((error) => alert(error))
+  .finally(() => alert("FIN."));
 }
 
 function cargar(datos) {
@@ -35,7 +35,7 @@ function recorrer(item, index) {
   videoCiudad.innerHTML = item.video;
   fila.appendChild(videoCiudad);
 
-  let imagenCiudad = documen.createElement("td");
+  let imagenCiudad = document.createElement("td");
   imagenCiudad.innerHTML = item.imagen;
   fila.appendChild(imagenCiudad);
 
