@@ -1,11 +1,11 @@
 //url del fichero json
-const url = "getWebcam.php"
+const url = "getWebcam.php.json"
 //contenedor donde se muestran los datos
 const  ubicacion = document.querySelector("#fila")
 
 //realizar solicitud
 fetch(url)
-  .then(response => response.text())
+  .then(response => response.json())
   .then(datos => console.log(datos))
   .finally(() => alert("FIN."))
   .catch(error => alert(error.datos));
