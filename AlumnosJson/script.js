@@ -84,7 +84,7 @@ function inicio() {
     });
     return unSuspenso;
   }
-  fetch("getDam1.json")
+  fetch(url)
     .then((respuesta) => respuesta.json())
     .then((alumno) => calculos(alumno));
 
