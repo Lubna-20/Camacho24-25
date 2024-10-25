@@ -26,7 +26,6 @@ const numeros = document.getElementsByClassName("display-5 mb-0");
 //No puedes hacer appendchild de panaderos porque no es un padre es un hijo!!
 const panaderosPadre = document.getElementsByClassName("row g-4")[3];
 //Limpiamos el contenedor
-
 // Este si es un padre, es el div que rodea a los 4 divs de panaderos
 // es [3] porque con esa clase hay otros elementos anteriores y justo ese es el que busco.
 // Para replace NO HACE FALTA BUCLE, ELIMINA LOS HIJOS DIRECTAMENTE
@@ -91,25 +90,6 @@ function inicio() {
 
       menuImg.appendChild(divEnlaces);
 
-      /** ESTE ES EL QUE TIENES QUE GENERAR CON LOS DOCUMENT
-      *    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item text-center rounded overflow-hidden">
-                        <img class="img-fluid" src="img/team-1.jpg" alt="">
-                        <div class="team-text">
-                            <div class="team-title">
-                                <h5>Full Name</h5>
-                                <span>Designation</span>
-                            </div>
-                            <div class="team-social">
-                                <a class="btn btn-square btn-light rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-light rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-light rounded-circle" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-      * 
-      */
       panaderosPadre.appendChild(divImg);
     });
   }
