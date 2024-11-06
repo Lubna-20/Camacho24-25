@@ -95,7 +95,7 @@ const vector2 = ["w", "c", "f", "a", "x"];
 console.log(vector2.sort());
 console.log(vector2.sort().reverse());*/
 
-const fruta = [
+/*const fruta = [
   { nombre: "naranja", precio: 4, stock: 6300 },
   { nombre: "manzanas", precio: 2, stock: 2000 },
   { nombre: "kiwi", precio: 3, stock: 4500 },
@@ -105,4 +105,12 @@ console.log(listadoPorPrecios)
 const listadoPorPreciosReves=listadoPorPrecios.slice()
 console.log(listadoPorPreciosReves.reverse())
 const listadoPorStock= fruta.sort((a, b) => a.stock - b.stock);
-console.log(listadoPorStock)
+console.log(listadoPorStock)*/
+
+const vector = [6, 3, 1, 4, 9]
+const vectorCopia= vector.slice().sort((a, b) => a - b)
+
+console.log(vector);
+console.log(vectorCopia);
+
+const vectorCopiaReverse=vectorCopia.slice()
