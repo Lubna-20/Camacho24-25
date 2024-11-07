@@ -47,8 +47,8 @@ function mostrarListadoOrdenado(coches) {
   limpiarCaja();
   if (coches.length > 0) {
     coches.forEach((element) => {
-      const spColor = document.createElement("small");
-      spColor.textContent = "KILOMETROS:" + element.kms;
+      const spkms = document.createElement("small");
+      spkms.textContent = "KILOMETROS:" + element.kms;
       const spMarca = document.createElement("small");
       spMarca.textContent = "  MARCA: " + element.marca;
       const spConsumo = document.createElement("small");
@@ -56,7 +56,7 @@ function mostrarListadoOrdenado(coches) {
       const spPrecio = document.createElement("small");
       spPrecio.textContent = "  PRECIO:" + element.precio;
       const salto = document.createElement("br");
-      cajaPrincipal.appendChild(spColor);
+      cajaPrincipal.appendChild(spkms);
       cajaPrincipal.appendChild(spMarca);
       cajaPrincipal.appendChild(spConsumo);
       cajaPrincipal.appendChild(spPrecio);

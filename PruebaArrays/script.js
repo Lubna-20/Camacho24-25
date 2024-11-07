@@ -3,7 +3,7 @@
  * 2. push(): El método push() añade uno o más elementos al final del vector
  */
 
-/*/const alumnos = [
+const alumnos = [
   { nombre: "Lola", nota: 9 },
   { nombre: "Lolo", nota: 5 },
 ];
@@ -19,10 +19,10 @@ let ultimo = vector1.pop();
 let ultimoElemento = vector1.pop();
 console.log("elemento borrado: ", ultimoElemento);
 console.log("vector actualizado: ", vector1);
-console.log("longitud del vector actualizado: ", vector1.length);*/
+console.log("longitud del vector actualizado: ", vector1.length);
 
 //4. unshift(item1,item2...): añade uno o más elementos al comienzo del array
-/*const arboles = [
+const arboles = [
   { nombre: "encina", altura: 10 },
   { nombre: "chopo", altura: 30 },
 ];
@@ -33,7 +33,7 @@ arboles.forEach(element => {
 arboles.unshift({ nombre: "alcornoque", altura: 20 });
 let vector2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 vector2.shift()
-console.log("vector2 : ", vector2);*/
+console.log("vector2 : ", vector2);
 
 //6 concat(item1,item2...) retorna un nuevo array que es la
 //concatenación de los arrays que se pasan como parámetros.
