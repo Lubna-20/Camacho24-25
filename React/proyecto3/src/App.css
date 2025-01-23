@@ -40,3 +40,38 @@
 .read-the-docs {
   color: #888;
 }
+.hijo {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  background-color: darkgoldenrod;
+  color: black;
+  font-size: 1rem;
+}
+.app {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  font-size: 1.2rem;
+  gap: 2rem;
+  border: 1px solid black;
+}
+.numeros{
+  display: flex;
+  background-color: coral;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  gap: 2rem;
+  border: 1px solid black;
+
+}

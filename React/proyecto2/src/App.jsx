@@ -2,16 +2,20 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Hijo from "./componentes/Hijo.jsx"
+import Hijo from './Hijo'
 
 function App() {
-  const alumno1 = "Lola";
-  const calificacion1 = Math.round(Math.random()*10);
+  const [count, setCount] = useState(0)
+
+ const alumno1 = "Salah";
+ const calificacion1 = Math.floor(Math.random() * 10+1);
+ const alumno2 = "Mohamed";
+ const calificacion2 = Math.floor(Math.random() * 10+1);
   return (
     <>
-    <h1>ALUMNOS</h1>
-    <Hijo nombre={alumno1} calificacion={calificacion1} />
-
+    <h1>Alumnos</h1>
+    <Hijo nombre={alumno1} calificacion={calificacion1}/>
+    <Hijo nombre={alumno2} calificacion={calificacion2}/>
     </>
   )
 }
