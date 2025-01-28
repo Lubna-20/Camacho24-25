@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "superProyecto": {
+    "chatdaw": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/super-proyecto",
+            "outputPath": "dist/chatdaw",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,11 +25,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/bootstrap.min.css"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.css"
             ],
-            "scripts": [
-              "src/assets/bootstrap.bundle.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -62,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "superProyecto:build:production"
+              "browserTarget": "chatdaw:build:production"
             },
             "development": {
-              "browserTarget": "superProyecto:build:development"
+              "browserTarget": "chatdaw:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "superProyecto:build"
+            "browserTarget": "chatdaw:build"
           }
         },
         "test": {
@@ -89,6 +88,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -98,6 +98,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "91d84f58-17f2-4abd-af64-d4bf6b363d5d"
   }
 }

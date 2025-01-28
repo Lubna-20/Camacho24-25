@@ -21,6 +21,6 @@ import { AromaticaComponent } from './aromatica/aromatica.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,NgModule]
 })
 export class AppModule { }
