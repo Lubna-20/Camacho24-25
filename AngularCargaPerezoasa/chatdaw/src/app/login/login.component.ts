@@ -18,9 +18,9 @@ Login() {
   this.servicioCliente.logeo(this.usuario).subscribe((x)=>{
     this.usuario=x[0];
     sessionStorage.setItem('Nombre',x[0].nombre)
-    this.router.navigate(['chat']);
-  })
 
+  })
+  this.router.navigate(['chat']);
 }
 
 }

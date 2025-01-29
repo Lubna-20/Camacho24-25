@@ -13,6 +13,11 @@ import { MenuComponent } from './menu/menu.component';
 import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {MatSort, MatSortModule} from '@angular/material/sort';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -22,13 +27,19 @@ import { HttpClientModule } from '@angular/common/http';
     RegistroComponent,
     ChatPComponent,
     AdminComponent,
-    MenuComponent
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule,HttpClientModule
+    FormsModule,HttpClientModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatTableModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
