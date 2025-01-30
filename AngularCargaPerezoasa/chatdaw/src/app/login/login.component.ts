@@ -9,6 +9,7 @@ import { Usuario } from '../usuario';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+privado: any;
   constructor(private router:Router,private servicioCliente:ServicioClienteService){
 
   }
@@ -17,7 +18,12 @@ listaUsuarios:Usuario[]=[];
 Login() {
   this.servicioCliente.logeo(this.usuario).subscribe((x)=>{
     this.usuario=x[0];
-    sessionStorage.setItem('Nombre',x[0].nombre)
+    sessionStorage.setItem('Nombre',x[0].nombre);
+    if (!this.privado) {
+      this.router.navigate(['chat']);
+    } else{
+      this.router.navigate(['chatp']);
+    }
 
   })
   this.router.navigate(['chat']);

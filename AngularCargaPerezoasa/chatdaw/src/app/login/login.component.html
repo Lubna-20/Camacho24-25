@@ -10,6 +10,9 @@
            <label for="password">Contraseña</label>
            <input type="password" [(ngModel)]="usuario.pwd" class="form-control" name="password" id="password" placeholder="">
         </div> <br>
+        <section class="example-section">
+          <mat-checkbox class="example-margin" [(ngModel)]="privado">Privado </mat-checkbox>
+        </section>
         <button class="btn btn-info" (click)="Login()">Logearse</button>
     </div>
   </div>
