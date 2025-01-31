@@ -3,10 +3,15 @@
 <p>Usuario: {{ uSuario }}</p>
 <button (click)="cerrarSesion()">Cerrar Sesión</button>
 <br>
+<mat-form-field class="example-form-field">
+  <mat-label>Teclear destinatario</mat-label>
+  <input matInput type="text"   [(ngModel)]="msjchat.destinatario">
+
+</mat-form-field>
 
 <mat-form-field class="example-form-field">
   <mat-label>Escribe mensaje y pusla enter</mat-label>
-  <input matInput type="text" (keydown.enter)="enviarMensaje()" (keyup)="recargar()" [(ngModel)]="mensaje.mensaje">
+  <input matInput type="text" (keydown.enter)="enviarMensaje()" (keyup)="recargar()" [(ngModel)]="msjchat.mensaje">
 
 </mat-form-field>
 </ng-container>
@@ -16,7 +21,7 @@
 
 <mat-form-field>
   <mat-label>Filter</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Buscar por cualquier campo" #input>
 </mat-form-field>
 
 <div class="mat-elevation-z8">
@@ -44,6 +49,12 @@
     <ng-container matColumnDef="mensaje">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Mensaje </th>
       <td mat-cell *matCellDef="let mensaje"> {{mensaje.mensaje}} </td>
+    </ng-container>
+
+     <!-- destinatario Column -->
+     <ng-container matColumnDef="destinatario">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Destinatario </th>
+      <td mat-cell *matCellDef="let mensaje"> {{mensaje.destinatario}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
