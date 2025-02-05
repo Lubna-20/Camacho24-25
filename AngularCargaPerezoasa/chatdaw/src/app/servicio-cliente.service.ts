@@ -25,10 +25,10 @@ escribirMensajes(mensaje:Mensaje):Observable<Mensaje>{
 insertarMensajeP(msjchat: Mensaje):Observable<Mensaje>{
   let fecha = new Date();
   msjchat.fecha=formatDate(fecha,'HH:mm:ss/dd-MM-yyyy',this.local);
-  return this.http.post<Mensaje>('http://camacho.atwebpages.com/chatDaw/AltaMensajeP.php', msjchat);
+  return this.http.post<Mensaje>('http://moralo.atwebpages.com/menuAjax/chat/AltaMensajeP.php', msjchat);
 }
 leerMensajeP(miParametro: string):Observable<Mensaje[]>{
-  return this.http.get<Mensaje[]>('http://camacho.atwebpages.com/chatDaw/ObtenerMensajesP.php?usuario='+miParametro);
+ return this.http.get<Mensaje[]>('http://moralo.atwebpages.com/menuAjax/chat/ObtenerMensajesP.php?usuario='+miParametro);
 
 }
 

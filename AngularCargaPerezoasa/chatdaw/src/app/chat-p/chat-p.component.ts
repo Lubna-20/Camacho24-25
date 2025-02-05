@@ -13,10 +13,11 @@ import { Usuario } from '../usuario';
   styleUrls: ['./chat-p.component.css']
 })
 export class ChatPComponent  implements OnInit {
-  uSuario: any;
+  uSuario!:string
   miParametro!:string;
 
-constructor( private httpClient:ServicioClienteService){
+
+constructor( private httpClient:ServicioClienteService, private router: Router) {
 
 }
   ngOnInit(): void {
@@ -33,28 +34,6 @@ constructor( private httpClient:ServicioClienteService){
     }
 
   }
-  insertarMensaje() {
-    this.msjchat.usuario=this.uSuario;
-    this.httpClient.escribirMensajes(this.msjchat).subscribe(()=>{
-      this.httpClient.leerMensajeP(this.uSuario).subscribe((datos: Mensaje[])=>{
-        this.dataSource.data=datos;
-        this.dataSource.paginator=this.paginator;
-        this.dataSource.sort=this.sort;
-        this.msjchat.mensaje='';
-      })
-    })
-  }
-  mandarPrivado(destinatario: string) {
-    this.msjchat.destinatario=destinatario;
-    this.httpClient.insertarMensajeP(this.msjchat).subscribe(()=>{
-      this.httpClient.leerMensajeP(this.uSuario).subscribe((datos: Mensaje[])=>{
-        this.dataSource.data=datos;
-        this.dataSource.paginator=this.paginator;
-        this.dataSource.sort=this.sort;
-        this.msjchat.mensaje='';
-      })
-    })
-  }
   displayedColumns: string []= ['id' ,'fecha', 'usuario','mensaje','destinatario']
 //Construir la lista de datos que va a recoger los contenidos del servicio obtenerMensajes()
 dataSource= new MatTableDataSource<Mensaje>();
@@ -70,27 +49,36 @@ msjchat: Mensaje={
   activo: 1,
 }
 recargar() {
+  this.httpClient.leerMensajeP(this.uSuario).subscribe((datos: Mensaje[])=>{
+    this.dataSource.data=datos;
+    this.dataSource.paginator=this.paginator;
+    this.dataSource.sort=this.sort;
+  })
 
 }
 enviarMensaje() {
-  this.msjchat.usuario==sessionStorage.getItem('Nombre')||'';
-  this.msjchat.fecha=new Date().toLocaleDateString()  
+  this.msjchat.usuario=sessionStorage.getItem('Nombre')||'';
+  this.msjchat.fecha=new Date().toLocaleDateString()
 this.httpClient.insertarMensajeP(this.msjchat).subscribe(()=>{
+  this.httpClient.leerMensajeP(this.uSuario).subscribe((datos: Mensaje[])=>{
+    this.dataSource.data=datos;
+    this.dataSource.paginator=this.paginator;
+    this.dataSource.sort=this.sort;
+  })
 
 })
 
 }
 cerrarSesion() {
-
-
+  sessionStorage.removeItem('Nombre')
+  this.uSuario = 'Sesión Cerrada'
+  this.dataSource = new MatTableDataSource<Mensaje>()
+  this.router.navigate(['login'])
 }
 @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   @ViewChild(MatSort)
   sort!: MatSort;
-
-
-
 
 
 }

@@ -8,6 +8,7 @@ import { Mensaje } from '../mensaje';
 import { Usuario } from '../usuario';
 import { Router } from '@angular/router';
 import { ServicioClienteService } from '../servicio-cliente.service';
+import { ServicioslocalService } from '../servicioslocal.service';
 
 @Component({
   selector: 'app-chat',
@@ -15,6 +16,15 @@ import { ServicioClienteService } from '../servicio-cliente.service';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
+recargar2() {
+    this.serviciolocal.leerMensajes().subscribe((resultado:Mensaje[])=>{
+      this.dataSource.data=resultado
+      this.dataSource.paginator=this.paginator
+      this.dataSource.sort=this.sort
+
+    })
+
+}
 recargar() {
   this.servicioCliente.leerMensajes().subscribe((resultado:Mensaje[])=>{
     this.dataSource.data=resultado
@@ -23,6 +33,7 @@ recargar() {
 
   })
 }
+
 enviarMensaje() {
   this.mensaje.usuario = this.uSuario|| ''
   this.mensaje.fecha= new Date().toLocaleDateString()
@@ -33,12 +44,12 @@ this.servicioCliente.escribirMensajes(this.mensaje).subscribe(()=>{
     this.dataSource.sort=this.sort
     this.tabla.renderRows();
     this.dataSource._renderChangesSubscription;
-    
+
   })
 })
 }
 
-  constructor(private router:Router,private servicioCliente:ServicioClienteService){
+  constructor(private router:Router,private servicioCliente:ServicioClienteService,private serviciolocal: ServicioslocalService) {
 
   }
 

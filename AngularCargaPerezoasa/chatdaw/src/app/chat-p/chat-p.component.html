@@ -5,7 +5,7 @@
 <br>
 <mat-form-field class="example-form-field">
   <mat-label>Teclear destinatario</mat-label>
-  <input matInput type="text"   [(ngModel)]="msjchat.destinatario">
+  <input matInput type="text"  (keydown.enter)="enviarMensaje()" (keyup)="recargar()"  [(ngModel)]="msjchat.destinatario">
 
 </mat-form-field>
 
