@@ -23,10 +23,10 @@ export const Listado2 = () => {
             </div>
             <div className="row">
                 <div className="col-lg-12">
-                    <table>
+                <h1>LISTADOS</h1>
                     <table className='table table-bordered table-striped'>
                         <thead>
-                             <tr>
+                            <tr>
                                 <th>Nombre</th>
                                 <th>Email</th>
                                 <th>PWD</th>
@@ -44,22 +44,20 @@ export const Listado2 = () => {
                                     </tr>
                                 ))
                             }
-                            
                         </tbody>
                     </table>
                     <table className='table table-bordered table-striped'>
                         <thead>
-                             <tr>
-                                <th>Nombre</th>
-                                <th>VotoPA</th>
-                                <th>VotoPB</th>
-                                <th>VotoPC</th>
-                                <th>VotoPD</th>
+                            <tr>
+                                <th>Provincia</th>
+                                <th>Votos PA</th>
+                                <th>Votos PB</th>
+                                <th>Votos PC</th>
+                                <th>Votos PD</th>
                                 <th>Representantes</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
                             {
                                 (posicion === 2)&& datos.map((dato)=>(
                                     <tr key={dato.id}>
@@ -72,31 +70,19 @@ export const Listado2 = () => {
                                     </tr>
                                 ))
                             }
-                            {
-                                (posicion === 3)&& datos.map((dato)=>(
-                                    <tr key={dato.id}>
-                                        <td>{dato.Provincia}</td>
-                                        <td>{dato.SituacionAltMax}</td>
-                                        <td>{dato.AlturaMaxima}</td>
-                                        <td>{dato.SituacionAltMin}</td>
-                                        <td>{dato.AlturaMinima}</td>
-                                    </tr>
-                                ))
-                            }
                         </tbody>
                     </table>
                     <table className='table table-bordered table-striped'>
                         <thead>
-                             <tr>
+                            <tr>
                                 <th>Provincia</th>
-                                <th>SituacionAltMax</th>
-                                <th>AlturaMaxima</th>
-                                <th>SituacionAltMin</th>
-                                <th>AlturaMinima</th>
+                                <th>Situacion Alt Max</th>
+                                <th>Altura Maxima</th>
+                                <th>Situacion Alt Min</th>
+                                <th>Altura Minima</th>
                             </tr>
                         </thead>
                         <tbody>
-                           
                             {
                                 (posicion === 3)&& datos.map((dato)=>(
                                     <tr key={dato.id}>
@@ -109,7 +95,6 @@ export const Listado2 = () => {
                                 ))
                             }
                         </tbody>
-                    </table>
                     </table>
                 </div>
                 
