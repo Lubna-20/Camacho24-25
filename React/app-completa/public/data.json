@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "type": "imagenes",
+      "url": "imagenes/foto1.jpg",
+      "description": "Una hermosa puesta de sol."
+    },
+    {
+      "id": 2,
+      "type": "imagenes",
+      "url": "imagenes/foto2.jpg",
+      "description": "Un paisaje montañoso."
+    },
+    {
+      "id": 3,
+      "type": "imagenes",
+      "url": "imagenes/foto3.jpg",
+      "description": "Un río en el bosque."
+    }
+  ]
