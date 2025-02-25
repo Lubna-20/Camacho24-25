@@ -1,0 +1,43 @@
+.contenedor{
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  margin: 30px;
+  width: 50%;
+}
+.claseRojo{
+  color: red;
+}
+  .claseVerde{
+    color: green;
+  }
+  .claseAzul{
+    color: blue;
+  }
+  .claseAmarrilo{
+    color: yellow;
+  }
+.claseFondoAmarrilo{
+  background-color: yellow;
+}
+  .claseFondoRojo{
+    background-color: red;
+  }
+  .claseFondoVerde{
+    background-color: green;
+  }
+  .claseFondoAzul{
+    background-color: blue;
+  }
+  .claseTamaño12px{
+    font-size: 12px;
+  }
+  .claseTamaño16px{
+    font-size: 16px;
+  }
+  .claseTamaño20px{
+    font-size: 20px;
+  }
+  .claseTamaño24px{
+    font-size: 24px;
+  }

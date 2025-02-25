@@ -1,0 +1,34 @@
+<div>
+  <h1>Ejercicio 2</h1>
+  <form [formGroup]="formulario2">
+    <div>
+      <label for="nombre">Selecione un hotel</label>
+      <select formControlName="hotel">
+        <option value="1">Hotel 1</option>
+        <option value="2">Hotel 2</option>
+        <option value="3">Hotel 3</option>
+      </select>
+      <br>
+      <small *ngIf="formulario2.get('hotel')?.hasError('required')">Requerido</small>
+    </div>
+    <br>
+    <div>
+      <label for="nombre">fecha entrada</label>
+      <input type="date" formControlName="fechaEntrada">
+      <br>
+      <small *ngIf="formulario2.get('fechaEntrada')?.hasError('required')">Requerido</small>
+    </div>
+    <div>
+      <label for="nombre">fecha salida</label>
+      <input type="date" formControlName="fechaSalida">
+      <br>
+      <small *ngIf="formulario2.get('fechaEntrada')?.hasError('required')">Requerido</small>
+      <small *ngIf="formulario2.get('fechaSalida')?.hasError('fechaInvalida')">Fecha debe ser mayor a la de entrada</small>
+    </div>
+    <br>
+    <button  (click)="enviar()" type="submit"
+    [disabled]="formulario2.invalid">Enviar</button>
+
+
+  </form>
+</div>

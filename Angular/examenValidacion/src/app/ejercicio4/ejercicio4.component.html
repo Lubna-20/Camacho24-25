@@ -1,0 +1,50 @@
+<div>
+  <h1>Ejercicio 4</h1>
+  <form [formGroup]="formulario4">
+    <div>
+      <label for="visa">Visa</label>
+      <input type="text" formControlName="visa">
+      <br>
+      <small *ngIf="formulario4.get('visa')?.hasError('required')">Requerido</small>
+      <small *ngIf="formulario4.get('visa')?.hasError('pattern')">el numero de la tarjeta es invalido</small>
+    </div>
+    <div>
+      <label for="mastercard">mastercard</label>
+      <input type="text" formControlName="mastercard">
+      <br>
+      <small *ngIf="formulario4.get('mastercard')?.hasError('required')">Requerido</small>
+      <small *ngIf="formulario4.get('mastercard')?.hasError('pattern')">el numero de la tarjeta es invalido</small>
+    </div>
+    <div>
+      <label for="american">american express</label>
+      <input type="text" formControlName="american">
+      <br>
+      <small *ngIf="formulario4.get('american')?.hasError('required')">Requerido</small>
+      <small *ngIf="formulario4.get('american')?.hasError('pattern')">el numero de la tarjeta es invalido</small>
+    </div>
+    <div>
+      <label for="discover">discover</label>
+      <input type="text" formControlName="discover">
+      <br>
+      <small *ngIf="formulario4.get('discover')?.hasError('required')">Requerido</small>
+      <small *ngIf="formulario4.get('discover')?.hasError('pattern')">el numero de la tarjeta es invalido</small>
+    </div>
+    <div>
+      <label for="club">Disners CLUB</label>
+      <input type="text" formControlName="club">
+      <br>
+      <small *ngIf="formulario4.get('club')?.hasError('required')">Requerido</small>
+      <small *ngIf="formulario4.get('club')?.hasError('pattern')">el numero de la tarjeta es invalido</small>
+    </div>
+    <div>
+      <label for="jcb">jcb</label>
+      <input type="text" formControlName="jcb">
+      <br>
+      <small *ngIf="formulario4.get('jcb')?.hasError('required')">Requerido</small>
+      <small *ngIf="formulario4.get('jcb')?.hasError('pattern')">el numero de la tarjeta es invalido</small>
+    </div>
+    <button  (click)="enviar()" type="submit"
+    [disabled]="formulario4.invalid">Enviar</button>
+
+  </form>
+</div>

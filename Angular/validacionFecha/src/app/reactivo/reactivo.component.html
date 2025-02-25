@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-auto m-2">
+      <form [formGroup]="FRegistro">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" placeholder="micorreo@gmail.com">
+          <mat-error *ngIf="FRegistro.get('email')?.hasError('email')">
+            Teclea una cuenta de mail válida
+          </mat-error>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha nacimiento</mat-label>
+          <input matInput [matDatepicker]="cumple" formControlName="cumple">
+          <mat-datepicker-toggle matSuffix [for]="cumple"></mat-datepicker-toggle>
+          <mat-datepicker #cumple></mat-datepicker>
+          <mat-error *ngIf="FRegistro.get('cumple')?.hasError('required')">Fecha de nacimiento requerido</mat-error>
+          <mat-error *ngIf="FRegistro.hasError('invalidDate')">
+            La fecha de nacimiento debe ser mayor a la actual
+          </mat-error>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+
+        <mat-form-field>
+          <mat-label>Trabajo</mat-label>
+          <mat-select formControlName="trabajo">
+            <mat-option value="analista">Analista</mat-option>
+            <mat-option value="tester">QA Tester</mat-option>
+            <mat-option value="desarrollador">Full Stack</mat-option>
+            <mat-option value="frontdesigner">Diseñador Front</mat-option>
+          </mat-select>
+
+        </mat-form-field>
+        <mat-divider></mat-divider>
+
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password">
+          <mat-error *ngIf="FRegistro.get('password')?.hasError('required')">
+            Password requerido
+          </mat-error>
+          <mat-divider></mat-divider>
+          <mat-divider></mat-divider>
+          <mat-error *ngIf="FRegistro.get('password')?.hasError('pattern')">
+            Password empieza con una letra mayúscula,termina con un número,longitud=10.
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <mat-label>Repetir Password</mat-label>
+          <input matInput type="password" formControlName="repeatPassword">
+          <mat-error *ngIf="FRegistro.get('repeatPassword')?.hasError('required')">
+            Password requerido
+          </mat-error>
+          <mat-error *ngIf="FRegistro.hasError('noIguales')">
+            las contraseñas deben coincidir
+          </mat-error>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+
+
+        <button class="btn bg-danger btn-md m-5" (click)="enviar()" type="submit"
+          [disabled]="FRegistro.invalid">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="container mt-4">
+  <div class="text-center">
+    <h3>{{segundos}}</h3>
+  </div>
+
+  <div class="row justify-content-center my-4">
+    <div class="col-lg-6">
+      <div [ngClass]="clase">
+        <p>
+          "Quiero jugar siempre bien y ganar títulos. Solo estoy en el comienzo."
+          <strong>- Cristiano Ronaldo</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="text-center my-4">
+    <button (click)="activar()" [disabled]="activado" class="btn btn-primary">
+      {{nombreBoton}}
+    </button>
+  </div>
+  <div class="my-4">
+    <h4 class="text-center text-primary">Personas</h4>
+    <ul class="list-group shadow-sm rounded">
+      <li *ngFor="let persona of personas; let indice = index"
+        class="list-group-item d-flex justify-content-between align-items-center bg-light border-0"
+        (mouseover)="verEdad(indice)" (mouseleave)="verNombre()">
+        <span class="fw-bold">
+          {{indicehover === indice ? persona.edad : persona.nombre}}
+        </span>
+        <i class="bi bi-person-circle text-secondary"></i>
+      </li>
+    </ul>
+  </div>
+
+  <div class="my-4">
+    <h4 class="text-center ">Periódicos Digitales</h4>
+    <ul class="list-group shadow-sm rounded">
+      <li *ngFor="let periodico of periodicos; let indice = index"
+        class="list-group-item d-flex justify-content-between align-items-center bg-light border-0"
+        (mouseover)="verEdad(indice)" (mouseleave)="verNombre()">
+        <a href="{{periodico.url}}">
+          {{indicehover === indice ? periodico.url : periodico.nombre}}
+        </a>
+        <i class="bi bi-globe text-primary"></i>
+      </li>
+    </ul>
+  </div>
