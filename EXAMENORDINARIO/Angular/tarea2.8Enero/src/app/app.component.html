@@ -1,0 +1,68 @@
+<mat-card>
+  <h2>Formulario con Angular Material</h2>
+  <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+    <!-- Nombre -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre" placeholder="Ingresa tu nombre">
+      <mat-error *ngIf="formulario.get('nombre')?.hasError('maxlength')">
+        El nombre no puede superar los 20 caracteres
+      </mat-error>
+      <mat-error *ngIf="formulario.get('nombre')?.hasError('required')">
+        El nombre es obligatorio
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Apellidos -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Apellidos</mat-label>
+      <input matInput formControlName="apellidos" placeholder="Ingresa tus apellidos">
+      <mat-error *ngIf="formulario.get('apellidos')?.hasError('maxlength')">
+        Los apellidos no pueden superar los 20 caracteres
+      </mat-error>
+      <mat-error *ngIf="formulario.get('apellidos')?.hasError('required')">
+        Los apellidos son obligatorios
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Fecha de Nacimiento -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Fecha de Nacimiento</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento" placeholder="Selecciona tu fecha de nacimiento">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="formulario.get('fechaNacimiento')?.hasError('required')">
+        La fecha de nacimiento es obligatoria
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Tarjeta de Crédito -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Tarjeta de Crédito</mat-label>
+      <input matInput formControlName="tarjetaCredito" placeholder="1234 5678 9012 3456">
+      <mat-error *ngIf="formulario.get('tarjetaCredito')?.hasError('required')">
+        La tarjeta de crédito es obligatoria
+      </mat-error>
+      <mat-error *ngIf="formulario.get('tarjetaCredito')?.hasError('pattern')">
+        Ingresa un número de tarjeta válido (20 dígitos)
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Contraseña -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="password" formControlName="contrasena" placeholder="Ingresa tu contraseña">
+      <mat-error *ngIf="formulario.get('contrasena')?.hasError('required')">
+        La contraseña es obligatoria
+      </mat-error>
+      <mat-error *ngIf="formulario.get('contrasena')?.hasError('minlength')">
+        La contraseña debe tener al menos 6 caracteres
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Botón Enviar -->
+    <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid">
+      Enviar
+    </button>
+  </form>
+</mat-card>

@@ -1,0 +1,25 @@
+<p>provincias works!</p>
+<div>
+  <h1>Provincias</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Votos PA</th>
+        <th>Votos PB</th>
+        <th>Votos PC</th>
+        <th>Votos PD</th>
+        <th>Representantes</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let provincia of provincias">
+        <td>{{provincia.nombreProvincia}}</td>
+        <td>{{provincia.votosPA}}</td>
+        <td>{{provincia.votosPB}}</td>
+        <td>{{provincia.votosPC}}</td>
+        <td>{{provincia.votosPD}}</td>
+        <td>{{provincia.representantes}}</td>
+      </tr>
+      </tbody>
+  </table>
+</div>

@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <h2 class="text-center">Crud con numeroes Aleatorios</h2>
+  <div class="row">
+    <div class="col-md-12">
+      <button (click)="aniadirNumero()" class="btn btn-primary">Añadir Numero</button>
+    </div>
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>numero</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let numero of numeros ; let index = index">
+            <td>{{index}}</td>
+            <td>{{numero}}</td>
+            <td>
+              <button class="btn btn-danger" (click)="eliminarNumero(index)">Eliminar</button>
+              <button class="btn btn-warning" (click)="editarNumero(index)">mofificar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

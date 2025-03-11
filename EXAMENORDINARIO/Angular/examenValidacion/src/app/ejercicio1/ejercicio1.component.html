@@ -1,0 +1,49 @@
+<form [formGroup]="formulario1" >
+  <h1>Formulario 1</h1>
+  <div>
+    <label for="name">Nombre:</label>
+    <input type="text" formControlName="name" id="name">
+    <br>
+    <small *ngIf="formulario1.get('name')?.hasError('maxlength')">Máximo 20 caracteres</small>
+    <small *ngIf="formulario1.get('name')?.hasError('required')">Requerido</small>
+  </div>
+  <br>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" formControlName="email" id="email">
+    <br>
+    <small *ngIf="formulario1.get('email')?.hasError('required')">Requerido</small>
+    <small *ngIf="formulario1.get('email')?.hasError('email')">Email no válido</small>
+    <br>
+    <small *ngIf="formulario1.get('email')?.hasError('pattern')">Email debe ser gmail</small>
+  </div>
+  <div>
+    <label for="edad">Edad</label>
+    <input type="number" formControlName="edad" id="edad">
+    <br>
+    <small *ngIf="formulario1.get('edad')?.hasError('required')">Requerido</small>
+    <small *ngIf="formulario1.get('edad')?.hasError('min')">tienes que ser mayor de edad</small>
+  </div>
+  <div>
+    <label for="cargo">cargo</label>
+    <select name="cargo" formControlName="cargo" id="cargo" >
+      <option value="junior">junior</option>
+      <option value="senior">senior</option>
+      <option value="leader">leader</option>
+    </select>
+    <br>
+    <small *ngIf="formulario1.get('cargo')?.hasError('required')">Requerido</small>
+  </div>
+  <div>
+    <label for="salario">salario</label>
+    <input type="number" formControlName="salario" id="salario">
+    <br>
+    <small *ngIf="formulario1.get('salario')?.hasError('required')">Requerido</small>
+    <small *ngIf="formulario1.get('salario')?.hasError('min')">el minimo es 900€</small>
+    <small *ngIf="formulario1.get('salario')?.hasError('max')">el maximo es 1200€</small>
+  </div>
+  <button  (click)="enviar()" type="submit"
+          [disabled]="formulario1.invalid">Enviar</button>
+
+
+</form>

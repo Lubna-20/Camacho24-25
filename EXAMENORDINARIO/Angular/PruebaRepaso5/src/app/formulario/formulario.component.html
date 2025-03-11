@@ -1,0 +1,26 @@
+<div>
+  <form>
+    <div>
+      <label for="email">
+        Email:
+        <input type="text" name="email" id="email" [(ngModel)]="user.email">
+      </label>
+    </div>
+
+    <div>
+      <label for="nombre">
+        Nombre:
+        <input type="text" name="nombre" id="nombre" [(ngModel)]="user.nombre">
+      </label>
+    </div>
+
+    <div>
+      <label for="pwd">
+        Contraseña:
+        <input type="text" name="pwd" id="pwd" [(ngModel)]="user.pwd">
+      </label>
+    </div>
+
+    <button (click)="crearUsuario()">Crear usuario</button>
+  </form>
+</div>

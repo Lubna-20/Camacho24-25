@@ -1,0 +1,52 @@
+<div>
+  <h1>Ejercicio 3</h1>
+  <form [formGroup]="formulario3">
+    <div>
+      <label for="letras">Solo letras</label>
+      <input type="text" formControlName="letras">
+      <br>
+      <small *ngIf="formulario3.get('letras')?.hasError('required')">Requerido</small>
+      <small *ngIf="formulario3.get('letras')?.hasError('pattern')">Solo letras</small>
+    </div>
+    <div>
+      <label for="numeros">Solo numeros</label>
+      <input type="text" formControlName="numeros">
+      <br>
+      <small *ngIf="formulario3.get('numeros')?.hasError('required')">Requerido</small>
+      <small *ngIf="formulario3.get('numeros')?.hasError('pattern')">Solo numeros</small>
+    </div>
+    <div>
+      <label for="mayusculas">Solo mayusculas</label>
+      <input type="text" formControlName="mayusculas">
+      <br>
+      <small *ngIf="formulario3.get('mayusculas')?.hasError('required')">Requerido</small>
+      <small *ngIf="formulario3.get('mayusculas')?.hasError('pattern')">Solo mayusculas</small>
+    </div>
+
+    <div>
+      <label for="rango">Rango numerico (100-200)</label>
+      <input type="text" formControlName="rango">
+      <br>
+      <small *ngIf="formulario3.get('rango')?.hasError('required')">Requerido</small>
+      <small *ngIf="formulario3.get('rango')?.hasError('min')">Rango numerico (100-200)</small>
+      <small *ngIf="formulario3.get('rango')?.hasError('max')">Rango numerico (100-200)</small>
+    </div>
+    <div>
+      <label for="numero">exactamente 5 numeros</label>
+      <input type="number" formControlName="numero">
+      <br>
+      <small *ngIf="formulario3.get('numero')?.hasError('required')">Requerido</small>
+      <small *ngIf="formulario3.get('numero')?.hasError('pattern')">exactamente 5 numeros</small>
+    </div>
+    <div>
+      <label for="letras">exactamente 10 letras</label>
+      <input type="text" formControlName="diezLetras">
+      <br>
+      <small *ngIf="formulario3.get('diezLetras')?.hasError('required')">Requerido</small>
+      <small *ngIf="formulario3.get('diezLetras')?.hasError('pattern')">exactamente 10 letras</small>
+    </div>
+    <button  (click)="enviar()" type="submit"
+    [disabled]="formulario3.invalid">Enviar</button>
+  </form>
+</div>
+

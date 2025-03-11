@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Bootstrap 4</title>
+    <!-- Enlace a Bootstrap 4 CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Formulario de Ejemplo</h2>
+        <form action="http://moralo.atwebpages.com/loterias/insertar2.php" method="get" id="cargar">
+
+             <!-- Campo Número 1 -->
+             <div class="form-group">
+                <label for="numero1">Número 1</label>
+                <input type="text" class="form-control" id="numero1" name="numero1" placeholder="Introduce un número">
+                <small id="numero1Help" class="form-text text-muted">Ingresa un número entero.</small>
+            </div>
+           <!-- Campo Texto 1 -->
+           <div class="form-group">
+            <label for="texto1">Texto 1</label>
+            <input type="text" class="form-control" id="texto1" name="texto1" placeholder="Introduce un texto">
+            <small id="texto1Help" class="form-text text-muted">Introduce una cadena de texto aquí.</small>
+        </div>
+
+        <!-- Campo Número 2 -->
+        <div class="form-group">
+            <label for="numero2">Número 2</label>
+            <input type="text" class="form-control" id="numero2" name="numero2" placeholder="Introduce otro número">
+            <small id="numero2Help" class="form-text text-muted">Ingresa otro número entero.</small>
+        </div>
+
+        <!-- Campo Texto 2 -->
+        <div class="form-group">
+            <label for="texto2">Texto 2</label>
+            <input type="text" class="form-control" id="texto2" name="texto2" placeholder="Introduce otro texto">
+            <small id="texto2Help" class="form-text text-muted">Introduce otra cadena de texto aquí.</small>
+        </div>
+
+            <!-- Botón de Envío -->
+            <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Enlace a Bootstrap 4 JS (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="js.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

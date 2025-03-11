@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-auto m-2">
+      <h1>Concesionario</h1>
+      <form [formGroup]="ConcesionarioRegistro" appearance="fill">
+        <mat-form-field class="example-full-width">
+          <mat-label>Matricula</mat-label>
+          <input matInput formControlName="matricula" placeholder="1111AAA">
+          <mat-error *ngIf="ConcesionarioRegistro.get('matricula')?.hasError('required')">
+            Matricula requerida
+          </mat-error>
+          <mat-error *ngIf="ConcesionarioRegistro.get('matricula')?.hasError('pattern')">
+            Matricula debe ser de 4 digitos y 3 letras
+          </mat-error>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+
+        <div class="example-full-width">
+          <mat-label>Opcion</mat-label>
+          <mat-radio-group formControlName="opcion">
+            <mat-radio-button value="Diesel"> Diesel</mat-radio-button>
+            <mat-radio-button value="Gasolina">Gasolina</mat-radio-button>
+            <mat-radio-button value="Hibrido">Hibrido</mat-radio-button>
+            <mat-radio-button value="Electrico">Electrico</mat-radio-button>
+          </mat-radio-group>
+          <mat-error *ngIf="ConcesionarioRegistro.get('opcion')?.hasError('required')">
+            Opcion requerida
+          </mat-error>
+          <mat-divider></mat-divider>
+        </div>
+
+        <div class="example-full-width">
+          <mat-label>Acessorios:</mat-label>
+          <mat-checkbox formControlName="gps">Gps</mat-checkbox>
+          <mat-checkbox formControlName="climatizador">Climatizador</mat-checkbox>
+          <mat-checkbox formControlName="cargador">cargador electrico</mat-checkbox>
+        </div>
+        <mat-form-field appearance="fill">
+          <mat-label>Neumaicos:</mat-label>
+          <mat-select formControlName="neumaicos">
+            <mat-option value="Michelin">Michelin</mat-option>
+            <mat-option value="Firestone">Firestone</mat-option>
+            <mat-option value="Pirelli">Pirelli</mat-option>
+            <mat-option value="Goodyear">Goodyear</mat-option>
+          </mat-select>
+          <mat-error *ngIf="ConcesionarioRegistro.get('neumaicos')?.hasError('required')">
+            Neumaicos requeridos
+          </mat-error>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <button class="btn bg-danger btn-md m-5" (click)="enviar()" type="submit"
+          [disabled]="ConcesionarioRegistro.invalid">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>

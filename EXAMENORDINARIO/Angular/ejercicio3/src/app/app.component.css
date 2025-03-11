@@ -1,0 +1,138 @@
+.salah {
+  background-color: red;
+  border-radius: 50%;
+  font-size: 30px;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  padding: 20px;
+}
+.lubna {
+  background-color: green;
+  border-radius: 10%;
+  border: 2px solid black;
+  font-size: 30px;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  padding: 20px;
+}
+.fouad {
+  position: fixed;
+  top: 50%;
+  background-color: blue;
+  border-radius: 10%;
+  border: 2px solid green;
+  font-size: 50px;
+  float: right;
+}
+.buba {
+  bottom: 50%;
+  position: fixed;
+  left: 50%;
+  background-color: yellow;
+  border-radius: 10%;
+  border: 2px solid red;
+  font-size: 50px;
+  float: left;
+}
+/* Clase predeterminada */
+div {
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  text-align: center;
+}
+
+/* Clases dinámicas */
+.alejandra {
+  position: relative;
+  background: radial-gradient(
+    circle,
+    #ff99c8,
+    #ff66b2,
+    #ff0066
+  ); /* Degradado radial */
+  color: #fff; /* Texto blanco brillante */
+  font-style: italic;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  padding: 40px;
+  border: 5px solid #ff0066; /* Borde vibrante */
+  border-radius: 25px; /* Bordes muy suaves */
+  box-shadow: 0 10px 20px rgba(255, 0, 102, 0.8),
+    /* Sombra externa */ 0 0 30px 10px rgba(255, 0, 102, 0.5) inset; /* Sombra interna */
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+  overflow: hidden;
+  animation: pulse 2s infinite ease-in-out; /* Pulso continuo */
+}
+
+/* Pulso del contenedor */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 10px 20px rgba(255, 0, 102, 0.8),
+      0 0 30px 10px rgba(255, 0, 102, 0.5) inset;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(255, 0, 102, 1),
+      0 0 40px 20px rgba(255, 0, 102, 0.7) inset;
+  }
+}
+
+/* Corazones flotantes dinámicos */
+.alejandra::before,
+.alejandra::after {
+  content: "💖";
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  animation: floatHearts 4s infinite ease-in-out;
+  z-index: -1;
+}
+
+.alejandra::before {
+  top: -40px;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.alejandra::after {
+  bottom: -40px;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+/* Animación de los corazones */
+@keyframes floatHearts {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px) rotate(15deg) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+}
+
+/* Chispeo de amor */
+.alejandra::after {
+  animation-name: floatHearts, sparkle;
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.5);
+  }
+}

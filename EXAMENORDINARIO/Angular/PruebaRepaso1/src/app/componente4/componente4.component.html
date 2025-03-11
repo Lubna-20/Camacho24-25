@@ -1,0 +1,6 @@
+
+<h4>Componente 4</h4>
+<button (click)="aniadirLista()">AÑADIR</button><input type="text" name="nombre" id="nombre" [(ngModel)]="nombre">
+<ul>
+  <li *ngFor="let item of lista">{{item}}</li>
+</ul>

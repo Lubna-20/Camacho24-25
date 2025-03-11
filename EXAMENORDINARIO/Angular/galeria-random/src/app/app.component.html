@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+     <!--  PRIMERA FILA -->
+    <div class="row text-center" style="height: 200px;">
+      <div class="col-lg-4">
+          <button (click)="activarChica()">Chica</button>
+          <button (click)="activarChico()">Chico</button>
+      </div>
+      <div class="col-lg-4">
+          <img [src]="imgChica" [width]="w1" [height]="h1">
+      </div>
+      <div class="col-lg-4">
+        <img [src]="imgChico" [width]="w2" [height]="h2">
+      </div>
+    </div>
+    <!--  SEGUNDA FILA -->
+    <div class="row text-center" style="height: 200px;">
+      <div class="col-lg-4">
+          <button (click)="activarChicaTemporizador()" [disabled]="activadoA">Chica</button>
+          <button (click)="activarChicoTemporizador()" [disabled]="activadoO">Chico</button>
+      </div>
+      <div class="col-lg-4">
+          <img [src]="imgChicaT" [width]="wT1" [height]="hT1">
+      </div>
+      <div class="col-lg-4">
+        <img [src]="imgChicoT" [width]="wT2" [height]="hT2">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,4 @@
+<h5 >Componente 1</h5>
+<div *ngFor="let item of botones let i = index">
+    <button type="button" [ngStyle]="{'background-color': botonColores[i]}" (click)="cambiarColor(botonColores[i])">{{item}}</button>
+</div>

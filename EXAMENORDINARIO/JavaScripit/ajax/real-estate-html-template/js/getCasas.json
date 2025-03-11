@@ -1,0 +1,80 @@
+[
+    
+      {
+        "id": 1,
+        "imagen": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGFwYXJ0bWVudHxlbnwwfHx8fDE2Nzg2NTg0NjE&ixlib=rb-4.0.3&q=80&w=400",
+        "estado": "En Venta",
+        "tipo": "Apartamento",
+        "precio": 150000,
+        "titulo": "Encantador Apartamento Urbano",
+        "ubicacion": "456 Avenida, San Francisco, EE. UU.",
+        "tamano": "850 Pies cuadrados",
+        "dormitorios": 2,
+        "banos": 1
+      },
+      {
+        "id": 2,
+        "imagen": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGFwYXJ0bWVudHxlbnwwfHx8fDE2Nzg2NTg0NjE&ixlib=rb-4.0.3&q=80&w=400",
+        "estado": "En Alquiler",
+        "tipo": "Villa",
+        "precio": 2500,
+        "titulo": "Villa de Lujo junto al Mar",
+        "ubicacion": "789 Camino de Playa, Miami, EE. UU.",
+        "tamano": "2000 Pies cuadrados",
+        "dormitorios": 4,
+        "banos": 3
+      },
+      {
+        "id": 3,
+        "imagen": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGFwYXJ0bWVudHxlbnwwfHx8fDE2Nzg2NTg0NjE&ixlib=rb-4.0.3&q=80&w=400",
+        "estado": "En Venta",
+        "tipo": "Oficina",
+        "precio": 500000,
+        "titulo": "Espacio de Oficina Moderno",
+        "ubicacion": "101 Parque Empresarial, Los Ángeles, EE. UU.",
+        "tamano": "1500 Pies cuadrados",
+        "dormitorios": 0,
+        "banos": 2
+      },
+      {
+        "id": 4,
+        "imagen": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGFwYXJ0bWVudHxlbnwwfHx8fDE2Nzg2NTg0NjE&ixlib=rb-4.0.3&q=80&w=400",
+       
+        "estado": "En Alquiler",
+        "tipo": "Edificio",
+        "precio": 3000,
+        "titulo": "Edificio Comercial Espacioso",
+        "ubicacion": "202 Calle Comercio, Nueva York, EE. UU.",
+        "tamano": "3000 Pies cuadrados",
+        "dormitorios": 0,
+        "banos": 4
+      },
+      {
+        "id": 5,
+        "imagen": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGFwYXJ0bWVudHxlbnwwfHx8fDE2Nzg2NTg0NjE&ixlib=rb-4.0.3&q=80&w=400",
+       
+        "estado": "En Venta",
+        "tipo": "Casa",
+        "precio": 450000,
+        "titulo": "Acogedora Casa Familiar",
+        "ubicacion": "303 Calle Familiar, Seattle, EE. UU.",
+        "tamano": "1800 Pies cuadrados",
+        "dormitorios": 3,
+        "banos": 2
+      },
+      {
+        "id": 6,
+        "imagen": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGFwYXJ0bWVudHxlbnwwfHx8fDE2Nzg2NTg0NjE&ixlib=rb-4.0.3&q=80&w=400",
+        
+        "estado": "En Alquiler",
+        "tipo": "Tienda",
+        "precio": 1500,
+        "titulo": "Espacio Comercial en el Centro",
+        "ubicacion": "404 Calle Mercado, Chicago, EE. UU.",
+        "tamano": "1200 Pies cuadrados",
+        "dormitorios": 0,
+        "banos": 1
+      }
+    
+]
+  

@@ -1,0 +1,47 @@
+[
+    {
+        "image": "https://media.gettyimages.com/id/1437086699/es/foto/manchester-england-cristiano-ronaldo-of-manchester-united-celebrates-after-scoring-their-teams.jpg?s=612x612&w=0&k=20&c=7gF4exQ-CQIoUvfoIBLF0o5xGkfQpLGwpWJN4s1-POw=",
+        "text": "Cristiano Ronaldo",
+        "description": "Leyenda del fútbol, conocido por su habilidad goleadora."
+    },
+    {
+        "image": "https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--30ccc747-aafb-4019-9c6f-d1f909ad00bd/ND_CHAMPIONS_RM_DORTMUND_VINICIUS_MVP_AV21292.app.webp?preferwebp=true",
+        "text": "Vini Jr",
+        "description": "Joven estrella brasileña, destaca por su velocidad en el campo."
+    },
+    {
+        "image": "https://fotografias.larazon.es/clipping/cmsimages02/2024/08/02/AC781879-88D2-4093-B019-E17AB1A8EBE7/98.jpg?crop=4230,2380,x0,y220&width=1900&height=1069&optimize=low&format=webply",
+        "text": "Achraf Hakimi",
+        "description": "Lateral marroquí del PSG, famoso por su velocidad y capacidad ofensiva."
+    },
+    {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSftYAuxAMox8MHEk71T4r-AQupdB0nhI-j3g&s",
+        "text": "Robert Lewandowski",
+        "description": "Goleador polaco, conocido por su precisión y capacidad en el área."
+    },
+    {
+        "image": "https://media.revistaad.es/photos/637dcb93e7d0f18746c3980d/1:1/w_2896,h_2896,c_limit/1442809583",
+        "text": "Lionel Messi",
+        "description": "Considerado uno de los mejores, famoso por su regate y visión de juego."
+    },
+    {
+        "image": "https://th.bing.com/th/id/OIP.Vmxg8BO5eYSXcsekmpRjLwHaE1?w=278&h=181&c=7&r=0&o=5&dpr=1.8&pid=1.7",
+        "text": "Kylian Mbappé",
+        "description": "Estrella francesa, destaca por su velocidad y potencia ofensiva."
+    },
+    {
+        "image": "https://media.gettyimages.com/id/1485512338/es/foto/manchester-england-kevin-de-bruyne-of-manchester-city-celebrates-after-scoring-the-teams-third.jpg?s=612x612&w=0&k=20&c=YcWwwum6I-WRSW9eH5o0S28DuxmUWrbOo2lBV97f7LI=",
+        "text": "Kevin De Bruyne",
+        "description": "Mediocampista belga, reconocido por su precisión y visión en el juego."
+    },
+    {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJXSJENpw8t_y-HhW6m6BC7GJMpNy_SkrcJQ&s",
+        "text": "Mohamed Salah",
+        "description": "Delantero egipcio, fundamental en el Liverpool por su velocidad y gol."
+    },
+    {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1dTzdaXqxL2Ia0Hyr8wAif3X97EwaVESaSg&s",
+        "text": "Karim Benzema",
+        "d": "Delantero francés, destacado por su juego de equipo y habilidad goleadora."
+    }
+]

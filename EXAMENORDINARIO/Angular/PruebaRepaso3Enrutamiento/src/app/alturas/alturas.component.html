@@ -1,0 +1,23 @@
+<p>alturas works!</p>
+<div>
+  <h1>Alturas</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Provincia</th>
+        <th>Situacion Alt Max</th>
+        <th>Altura Maxima</th>
+        <th>Situacion Alt Min</th>
+        <th>Altura Minima</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let altura of alturas">
+        <td>{{altura.Provincia}}</td>
+        <td>{{altura.SituacionAltMax}}</td>
+        <td>{{altura.AlturaMaxima}}</td>
+        <td>{{altura.SituacionAltMin}}</td>
+        <td>{{altura.AlturaMinima}}</td>
+      </tr>
+      </tbody>
+  </table>
+</div>
